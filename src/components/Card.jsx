@@ -4,7 +4,7 @@ export default function Card({description, position, company,name, image}){
       return (
   
         <div className="w-fit bg-white border-2 flex justify-center items-center">
-            <div>
+            <div className="">
                 <p className="">{description}</p>
                 <div className="flex justify-start">
                     <img src={image} alt="" className="w-auto rounded-[50%]"/>
