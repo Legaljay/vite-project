@@ -1,6 +1,10 @@
 import './App.css'
 import NavBar from './components/NavBar'
 import Card from './components/Card'
+import Welcome from './components/Welcome'
+import { State } from './components/State'
+import { CountBtn } from './components/CountBtn'
+import { Effect } from './components/Effect'
 
 function App() {
   const data = [
@@ -37,21 +41,30 @@ function App() {
       "image": "https://example.com/david.jpg"
     }
   ]
+
+  const hey = () => { alert('you clicked me')}
+  const text = "Welcome to GomyCode"
   return (
     <div className='bg-[red] h-screen'>
       <NavBar />
-      {
-        data.map((item) => (
-          <Card 
-            key={item.id} 
-            description={item.description} 
-            position={item.position} 
-            company={item.company} 
-            name={item.name} 
-            image={item.image}
-          />
-        ))
-      }
+      <Welcome alert = {hey} message = {text} />
+      <div className='flex flex-row gap-4'>
+        {
+          data.map((item) => (
+            <Card 
+              key={item.id} 
+              description={item.description} 
+              position={item.position} 
+              company={item.company} 
+              name={item.name} 
+              image={item.image}
+            />
+          ))
+        }
+      </div>
+      <State />
+      <CountBtn />
+      <Effect />
     </div>
   )
 }
