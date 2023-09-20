@@ -5,8 +5,15 @@ import Welcome from './components/Welcome'
 import { State } from './components/State'
 import { CountBtn } from './components/CountBtn'
 import { Effect } from './components/Effect'
+import { useState, useEffect} from 'react'
+
 
 function App() {
+  const [name, setName] = useState('AY');
+  
+    useEffect(() => {
+      document.title = `${name}'s website`
+    },[name])
   const data = [
 
     { "id": 1,
@@ -44,10 +51,15 @@ function App() {
 
   const hey = () => { alert('you clicked me')}
   const text = "Welcome to GomyCode"
+
+
+
+
   return (
     <div className='bg-[red] h-screen'>
       <NavBar />
       <Welcome alert = {hey} message = {text} />
+      <button onClick={() => {setName('Dagboru')}} className='bg-black text-white'>Change Title</button>
       <div className='flex flex-row gap-4'>
         {
           data.map((item) => (
@@ -65,6 +77,7 @@ function App() {
       <State />
       <CountBtn />
       <Effect />
+      
     </div>
   )
 }
