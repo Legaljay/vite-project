@@ -19,16 +19,14 @@ function Card({ description, position, company, name, image }) {
       </div>
     </div>
   );
-};
-
-Card.propTypes = {
-
-  name: PropTypes.string,
-  description:PropTypes.string,
-  position: PropTypes.string, 
-  company: PropTypes.string
-
 }
 
-export default Card
+Card.propTypes = {
+  name: PropTypes.string,
+  description: PropTypes.string,
+  position: PropTypes.string,
+  company: PropTypes.string,
+  image: PropTypes.string,
+};
 
+export default Card;

@@ -1,4 +1,4 @@
-import React from 'react'
+import PropTypes from 'prop-types'
 import { PropTest } from './PropTest'
 
 
@@ -13,4 +13,8 @@ const Welcome = ({alert, message}) => {
   )
 }
 
+Welcome.propTypes = {
+  alert: PropTypes.string,
+  message: PropTypes.string
+}
 export default Welcome
